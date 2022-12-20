@@ -10,5 +10,6 @@ namespace Bookstore.Data
           
         }
         public DbSet<Book> Books { get; set; }
+        public DbSet<Comic> Comics { get; set; }
     }
 }

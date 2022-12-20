@@ -35,9 +35,43 @@ namespace Bookstore
             Quantity = 81,
             },
           };
-          dataContext.Books.AddRange(books);
-          dataContext.SaveChanges();
+          dataContext.Books.AddRange(books);      
         }
+        if(!dataContext.Comics.Any())
+        {
+          var comics = new List<Comic>() {
+            new Comic() {
+              Title = "One Piece",
+              Author = "Eichiro Oda",
+              Chapter = 1069,
+              IsFinished = false,
+              Quantity = 64,
+            },
+            new Comic() {
+              Title = "Naruto",
+              Author = "Masashi Kishimoto",
+              Chapter = 700,
+              IsFinished = true,
+              Quantity = 16,
+            },
+            new Comic() {
+              Title = "Shingeki No Kyojin",
+              Author = "Hajime Isayama",
+              Chapter = 139,
+              IsFinished = true,
+              Quantity = 24,
+            },
+            new Comic() {
+              Title = "One Punch-Man",
+              Author = "One & Yusuke Murata",
+              Chapter = 176,
+              IsFinished = false,
+              Quantity = 72,
+            },
+          };
+        dataContext.Comics.AddRange(comics);
+        }
+        dataContext.SaveChanges();
       }
     }
 }
